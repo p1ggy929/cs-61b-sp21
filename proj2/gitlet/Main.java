@@ -21,10 +21,9 @@ public class Main {
      */
     public static void main(String[] args) {
         if (args.length == 0) {
-            // Enter interactive mode
-            interactiveMode = true;
-            Methods.setInteractiveMode(true);
-            runInteractiveMode();
+            // No command provided - output error and exit
+            Methods.setInteractiveMode(false);
+            executeCommand(args, false);
         } else {
             // Execute single command (original behavior)
             Methods.setInteractiveMode(false);
